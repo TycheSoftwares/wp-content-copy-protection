@@ -5,12 +5,15 @@
   Plugin URI: https://www.tychesoftwares.com/premium-plugins/
   Description: WP Content Copy Protection prevents plagiarism and protects your valuable online content (such as source code, text and images) from being copied illegally. Copy methods are disabled via mouse and keyboard. See <a href="options-general.php?page=wpcp_options">Settings > WP Content Copy Protection</a> to learn more about WP Content Copy Protection - The complete content protection plugin for WordPress.
   Version: 1.1.8.4
+  Text Domain: wpccpl
   Author: Tyche Softwares
   Author URI: https://www.tychesoftwares.com/
   License: GPLv2 or later
   License URI: http://www.gnu.org/licenses/gpl-2.0.html/
  */
 
+define ( 'wpccpl_version', '1.1.8.4' );
+ 
 /*
   Original work: Copyright 2013-2015  Rynaldo Stoltz  (email: rcstoltz@gmail.com )
   Modified work: Copyright 2017  Vishal Kothari (email: vishal@tychesoftwares.com )
@@ -31,7 +34,108 @@
  */
 
 if(is_admin()) {
-	add_action('admin_menu', 'constr_menu');
+  add_action('admin_menu', 'constr_menu');
+  add_action ('init', 'wpccl_add_all_component');
+
+  add_filter( 'ts_deativate_plugin_questions', 'wpccpl_deactivate_add_questions' );
+  add_filter( 'ts_tracker_data',               'wpccpl_ts_add_plugin_tracking_data' );
+  add_filter( 'ts_tracker_opt_out_data',       'wpccpl_get_data_for_opt_out' );
+  
+  add_action( 'admin_init', 'wpccl_admin_actions' );
+}
+
+function wpccl_add_all_component () {
+  
+  	include_once ('includes/wpccpl-all-component.php');
+	do_action ('wpccpl_activate');
+}
+
+function wpccpl_deactivate_add_questions ( $wpccpl_deactivate_questions ) {
+
+  $wpccpl_deactivate_questions = array(
+      0 => array(
+          'id'                => 4, 
+          'text'              => __( "Some keys does not blocked.", "wpccpl" ),
+          'input_type'        => 'textfield',
+          'input_placeholder' => 'Which keys?'
+          ),
+      1 => array(
+          'id'                => 5,
+          'text'              => __( "I need more keys need to be blocked.", "wpccpl" ),
+          'input_type'        => 'textfield',
+          'input_placeholder' => 'Which keys?'
+      ), 
+      2 =>  array(
+          'id'                => 6,
+          'text'              => __( "The plugin does not protect Audio and video files on my site.", "wpccpl" ),
+          'input_type'        => '',
+          'input_placeholder' => ''
+      ),
+      3 => array(
+          'id'                => 7,
+          'text'              => __( "The plugin is not compatible with my browser.", "wpccpl" ),
+          'input_type'        => 'textfield',
+          'input_placeholder' => 'Which browser?'
+      )
+
+  );
+  return $wpccpl_deactivate_questions;
+}
+/**
+ * Plugin's data to be tracked when Allow option is choosed.
+ *
+ * @hook ts_tracker_data
+ *
+ * @param array $data Contains the data to be tracked.
+ *
+ * @return array Plugin's data to track.
+ * 
+ */
+
+function wpccpl_ts_add_plugin_tracking_data ( $data ) {
+	if ( isset( $_GET[ 'wpccpl_tracker_optin' ] ) && isset( $_GET[ 'wpccpl_tracker_nonce' ] ) && wp_verify_nonce( $_GET[ 'wpccpl_tracker_nonce' ], 'wpccpl_tracker_optin' ) ) {
+
+		$plugin_data[ 'ts_meta_data_table_name' ] = 'ts_tracking_wpccpl_meta_data';
+		$plugin_data[ 'ts_plugin_name' ]		  = 'WP Content Copy Protection';
+		/**
+		 * Add Plugin data
+		 */
+		$plugin_data[ 'wpccpl_plugin_version' ]   = wpccpl_version;
+		
+		$plugin_data[ 'wpccpl_allow_tracking' ]   = get_option ( 'wpccpl_allow_tracking' );
+		$data[ 'plugin_data' ]                    = $plugin_data;
+	}
+	return $data;
+}
+    
+/**
+ * Tracking data to send when No, thanks. button is clicked.
+ *
+ * @hook ts_tracker_opt_out_data
+ *
+ * @param array $params Parameters to pass for tracking data.
+ *
+ * @return array Data to track when opted out.
+ * 
+ */
+function shortcodes_get_data_for_opt_out ( $params ) {
+	$plugin_data[ 'ts_meta_data_table_name'] = 'ts_tracking_wpccpl_meta_data';
+	$plugin_data[ 'ts_plugin_name' ]		 = 'WP Content Copy Protection';
+	
+	// Store count info
+	$params[ 'plugin_data' ]  				 = $plugin_data;
+	
+	return $params;
+}
+
+function wpccl_admin_actions () {
+  /**
+   * We need to store the plugin version in DB, so we can show the welcome page and other contents.
+   */
+    $wpccpl_version_in_db = get_option( 'wpccpl_version' ); 
+    if ( $wpccpl_version_in_db != wpccpl_version ){
+        update_option( 'wpccpl_version', wpccpl_version );
+    }
 }
 
 function constr_menu() {
