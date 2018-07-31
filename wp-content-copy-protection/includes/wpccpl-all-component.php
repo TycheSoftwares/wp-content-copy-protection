@@ -50,13 +50,12 @@ if ( ! class_exists( 'WPCCPL_Component' ) ) {
 
                 $wpccpl_settings_page        = '';
 
-
                 new WPCCPL_TS_tracking ( $wpccpl_plugin_prefix, $wpccpl_plugin_name, $wpccpl_blog_post_link, $wpccpl_locale, $wpccpl_plugin_url, $wpccpl_settings_page, '', '', '', $wpccpl_file_name );
 
                 new WPCCPL_TS_Tracker ( $wpccpl_plugin_prefix, $wpccpl_plugin_name );
 
-                // $wpccpl_deativate = new WPCCPL_TS_deactivate;
-                // $wpccpl_deativate->init ( $wpccpl_file_name, $wpccpl_plugin_name );
+                $wpccpl_deativate = new WPCCPL_TS_deactivate;
+                $wpccpl_deativate->init ( $wpccpl_file_name, $wpccpl_plugin_name );
 
                 
                 new WPCCPL_TS_Welcome ( $wpccpl_plugin_name, $wpccpl_plugin_prefix, $wpccpl_locale, $wpccpl_plugin_folder_name, $wpccpl_plugin_dir_name, $wpccpl_get_previous_version );
