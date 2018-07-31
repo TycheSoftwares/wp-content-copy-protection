@@ -118,7 +118,7 @@ function wpccpl_ts_add_plugin_tracking_data ( $data ) {
  * @return array Data to track when opted out.
  * 
  */
-function shortcodes_get_data_for_opt_out ( $params ) {
+function wpccpl_get_data_for_opt_out ( $params ) {
 	$plugin_data[ 'ts_meta_data_table_name'] = 'ts_tracking_wpccpl_meta_data';
 	$plugin_data[ 'ts_plugin_name' ]		 = 'WP Content Copy Protection';
 	
