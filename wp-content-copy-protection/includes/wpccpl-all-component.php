@@ -57,7 +57,6 @@ if ( ! class_exists( 'WPCCPL_Component' ) ) {
                 $wpccpl_deativate = new WPCCPL_TS_deactivate;
                 $wpccpl_deativate->init ( $wpccpl_file_name, $wpccpl_plugin_name );
 
-                
                 new WPCCPL_TS_Welcome ( $wpccpl_plugin_name, $wpccpl_plugin_prefix, $wpccpl_locale, $wpccpl_plugin_folder_name, $wpccpl_plugin_dir_name, $wpccpl_get_previous_version );
 
                 $ts_pro_wpccpl = self::wpccpl_get_faq ();
