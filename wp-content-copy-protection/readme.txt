@@ -1,11 +1,11 @@
 === WP Content Copy Protection ===
 
 Contributors:      tychesoftwares
-Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HZWQXQCBC77ZY    
+Donate link:       https://www.paypal.me/TycheSoftwares    
 Tags:              protection, copyright, theft, no right click, content protection, image protection, image protect, copyprotect, security, copy protection, protect blog, plagiarism, duplicate, seo, context menu
 Requires at least: 3.0
-Tested up to:      4.3
-Stable tag:        1.1.8.4
+Tested up to:      4.9.7
+Stable tag:        1.1.8.5
 License:           GPLv2 or Later
 License URI: 	   http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -368,3 +368,7 @@ This plugin inheritently disables right click/copy/save functions on your defaul
 = 1.1.8.4 =
 
 * removed links of yooplugins
+
+= 1.1.8.5 =
+
+* Usage Tracking has been added in the plugin. It provides an option to allow tracking of the non-sensitive data of our plugin from the website. You can read more about it [here](https://www.tychesoftwares.com/docs/docs/wp-content-copy-protection/usage-tracking/).
