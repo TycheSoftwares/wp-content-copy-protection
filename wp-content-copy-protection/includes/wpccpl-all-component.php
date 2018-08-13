@@ -56,13 +56,12 @@ if ( ! class_exists( 'WPCCPL_Component' ) ) {
 
                 $wpccpl_deativate = new WPCCPL_TS_deactivate;
                 $wpccpl_deativate->init ( $wpccpl_file_name, $wpccpl_plugin_name );
-
-
-                $user = wp_get_current_user();
                 
-                if ( in_array( 'administrator', (array) $user->roles ) ) {
-                    new WPCCPL_TS_Welcome ( $wpccpl_plugin_name, $wpccpl_plugin_prefix, $wpccpl_locale, $wpccpl_plugin_folder_name, $wpccpl_plugin_dir_name, $wpccpl_get_previous_version );
-                }
+                // $user = wp_get_current_user();
+                
+                // if ( in_array( 'administrator', (array) $user->roles ) ) {
+                //     new WPCCPL_TS_Welcome ( $wpccpl_plugin_name, $wpccpl_plugin_prefix, $wpccpl_locale, $wpccpl_plugin_folder_name, $wpccpl_plugin_dir_name, $wpccpl_get_previous_version );
+                // }
 
                 $ts_pro_wpccpl = self::wpccpl_get_faq ();
                 new WPCCPL_TS_Faq_Support( $wpccpl_plugin_name, $wpccpl_plugin_prefix, $wpccpl_plugins_page, $wpccpl_locale, $wpccpl_plugin_folder_name, $wpccpl_plugin_slug, $ts_pro_wpccpl, '', $wpccpl_file_name );
