@@ -5,7 +5,7 @@ Donate link:       https://www.paypal.me/TycheSoftwares
 Tags:              protection, copyright, theft, no right click, content protection, image protection, image protect, copyprotect, security, copy protection, protect blog, plagiarism, duplicate, seo, context menu
 Requires at least: 3.0
 Tested up to:      4.9.8
-Stable tag:        1.1.8.6
+Stable tag:        1.1.8.7
 License:           GPLv2 or Later
 License URI: 	   http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -378,3 +378,7 @@ This plugin inheritently disables right click/copy/save functions on your defaul
 * When the plugin is activated, it was blocking the FavIcon of the website. It has been fixed.
 
 * While using MAC, the customers are able to print the screen using the Command + p key. It has been fixed.
+
+= 1.1.8.7 =
+
+* Removed the promotional notices being displayed at the backend of WordPress website.

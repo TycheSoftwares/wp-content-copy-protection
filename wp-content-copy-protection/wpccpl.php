@@ -4,7 +4,7 @@
   Plugin Name: WP Content Copy Protection
   Plugin URI: https://www.tychesoftwares.com/premium-plugins/
   Description: WP Content Copy Protection prevents plagiarism and protects your valuable online content (such as source code, text and images) from being copied illegally. Copy methods are disabled via mouse and keyboard. See <a href="options-general.php?page=wpcp_options">Settings > WP Content Copy Protection</a> to learn more about WP Content Copy Protection - The complete content protection plugin for WordPress.
-  Version: 1.1.8.6
+  Version: 1.1.8.7
   Text Domain: wpccpl
   Author: Tyche Softwares
   Author URI: https://www.tychesoftwares.com/
@@ -12,7 +12,7 @@
   License URI: http://www.gnu.org/licenses/gpl-2.0.html/
  */
 
-define ( 'wpccpl_version', '1.1.8.6' );
+define ( 'wpccpl_version', '1.1.8.7' );
  
 /*
   Original work: Copyright 2013-2015  Rynaldo Stoltz  (email: rcstoltz@gmail.com )
