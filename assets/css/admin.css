@@ -1,0 +1,70 @@
+#form_wpccp input[type="text"]{
+	padding: 7px;
+}
+
+#wpccp_license_activate,
+#wpccp_license_deactivate {
+	height: 33px;
+}
+
+.select2-container--default .select2-selection--multiple {
+	border-radius: 0;
+	border: 1px solid #ddd;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+	border-bottom: none;
+}
+
+.select2-results__options {
+	border-top: none;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple,
+.select2-results__options {
+	border-color: #5b9dd9;
+	box-shadow: 0 0 2px rgba(30,140,190,.8);
+	outline: 2px solid transparent;
+}
+
+.select2-container .select2-selection--multiple .select2-selection__rendered {
+	display: block;
+}
+
+.ts-upgrade {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	z-index: 100;
+	margin-top: 5%;
+	margin-left: 12%;
+	background-color: #ffffff;
+	border-radius: 4px;
+	padding: 15px 20px;
+	box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+	background: #fff url(../img/waves.svg) bottom center no-repeat;
+}
+
+.ts-upgrade img{
+	max-width: 120px;
+	margin-right: 20px;
+}
+
+.ts-upgrade-cta {
+	display: inline-block;
+}
+
+.ts-upgrade + .form-table {
+	position: relative;
+}
+
+.ts-upgrade + .form-table::before {
+	background: #00000021 url(../img/circles.svg);
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 1;
+	margin: 0 -10px;
+	border-radius: 4px;
+}

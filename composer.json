@@ -1,0 +1,41 @@
+{
+    "name": "tyche-softwares/wp-content-copy-protection",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "description": "WP Content Copy Protection uses aggressive techniques in protecting your online content (text/source/images/video/audio) from being stolen.",
+    "homepage": "https://www.tychesoftwares.com/premium-plugins/",
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "*",
+        "squizlabs/php_codesniffer": "*",
+        "wp-coding-standards/wpcs": "*",
+        "phpcompatibility/phpcompatibility-wp": "*"
+    },
+    "keywords": [
+      "wordpress",
+      "plugin",
+          "content",
+          "protection"
+    ],
+    "support": {
+      "issues": "https://github.com/TycheSoftwares/wp-content-copy-protection/issues/"
+      },
+      "autoload": {
+          "classmap": [
+              "includes/"
+          ]
+      },
+    "scripts": {
+      "phpcs": [
+        "phpcs -s -p ."
+      ],
+      "phpcbf": [
+        "phpcbf -p ."
+      ]
+    },
+    "extra": {
+      "scripts-description": {
+            "phpcs": "Analyze code against the WordPress coding standards with PHP_CodeSniffer",
+            "phpcbf": "Fix coding standards warnings/errors automatically with PHP Code Beautifier"
+        }
+    }
+}

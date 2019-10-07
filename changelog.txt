@@ -1,0 +1,140 @@
+﻿== Changelog ==
+
+= 1.0.7 (PRO Release)=
+* included wpccp admin settings page (live)
+* extended function one (admin can now exclude pages from being copy protected)
+* extended function two (admin can disable/enable copy protection for registered and logged in users)
+* upgraded and improved JS error message (modified visual appearance and included instructions link)
+* general housekeeping
+
+= 1.0.7.2 =
+* added additional image security (now automatically layers all uploaded images with a blank image layer making it near impossible for anyone to steal images - whether Javascript is turned on or off)
+* fixed a bug in mobile hold/copy function (text select only)
+* fixed user input bug for Chrome browsers
+* text and image copy/save protection now works on mobile devices
+* changed JS error box color (previous conflicted with text color)
+* general housekeeping
+
+= 1.0.7.2b =
+
+* fixed bug in mobile text selection function (hold to copy)
+* decreased selling price
+* general housekeeping
+
+= 1.0.7.3 =
+
+* removed conflicting meta data from code
+* restructured opening tags on line 178
+* re-enabled text selection (users could still copy selected text via browser coy option) ! no text select = nothing to copy
+* general housekeeping
+
+= 1.0.7.4 =
+
+* removed duplicate javascript function from code
+* added feed protection against scrapers / autoblogs (includes copyright notice)
+* tested compatibility with v3.7.1
+* added additional screenshots
+* updated readme file
+
+= 1.0.7.5 =
+
+* added new function (ctrl+s = document saving) to keyboard copy protection. Now prevents keyboard shortcut to saving documents/webpages.
+* renamed plugin name and php files due to conflict with our free version
+* made changes to blank index.php file
+* pushed from v1.0.7.5-v1.0.7.5
+* general housekeeping
+
+= 1.2 =
+
+* added post copy control function
+* disabled mac osx keyboard copy keys
+* added source code padding option
+* disabled ctrl+shift+i keys (used in bypass measure for viewing source code)
+* disabled bookmarking key (used in bypass measure for viewing source code)
+* removed javascript code for frame breaking (conflict with theme customization)
+* closed style tags in mobile copy disable function
+* disabled ctrlv (paste) key via keyboard
+* disabled context menu key via keyboard
+* removed imagetoolbar meta (not needed)
+* tested plugin compatibility with v3.9.1
+* cleaned up settings page (conf.php)
+* added to the readme.txt file
+* added screenshots
+
+= 1.6 =
+
+* re-enabled ctrlv key command (user requested)
+* temporarily removed source code padding function due to bug (will be available again in next update)
+* restructured windows/linux keyboard copy protection functions
+* fixed and expanded mac osx keyboard copy protection functions
+* upgraded mobile copy protection (more strict)
+* removed duplicated code
+* upgraded v1.2 - v1.6
+
+= 1.6.2 =
+
+* minor code changes
+* enabled context menu for href tags only
+* fixed bug that prevented user inputs (i/j keys)
+* retested all functions on major browsers
+* wordpress 3.9.2 compatible
+* upgraded v1.6.2
+
+= 1.6.3 =
+* extended prtsc function (ability to redirect user to a warning page) - see readme.txt
+* fixed bug that prevented right click in user input areas
+* fixed img drag/drop bug (win8 compatible)
+
+= 1.6.3.1 =
+* copy function impossible from browser menu (even when using the 'select all' function). copy will return blank
+* added option for category-level copy exclusion (admin can exclude specific categories from being protected)
+* disabled ctrl+quickfind (which can be used to bypass any other keyboard copy command)
+* added settings link to plugin menu (dashboard)
+
+= 1.6.4 =
+* extended javascript validation (includes a redirect when js is disabled in user browser)
+* removed feeds (rdf, rss, rss2, atom, rss2_comments and atom_comments) from content scrapers
+* optimized mac os x specific hotkeys
+* core v4.1.1 compatible
+* general housekeeping
+
+= 1.6.5 =
+* added function to secure uploads dir from direct user access (without this function, all images and uploads can be accessed by default)
+* modified index.php file (this file will be copied to user's uploads dir)
+
+= 1.7 =
+* copy protection now compatible with all gallery plugins (such as NextGEN and NextCellent)
+* extended uploads dir protection function to include subdirectories
+* removed unnecessary javascript file from old image protection
+* re-coded image protection (more secure & less cluttered)
+* full copy protection now compatible with WooCommerce
+
+= 1.8 =
+* removed unnecessary code left behind in previous update
+* added new user setting (admin can enable/disable protection for site admins only OR admin and registered/logged in users)
+* added source code padding (automatically adds 500 blank lines to your source code to trick offenders)
+* added auto-update functionality (plugin can now be auto-updated from your dashboard)
+* retested all functionality for any possible conflict
+* general housekeeping
+
+= 1.8.32 =
+
+* upgraded prtsc function (warning message replaced with instant redirect | user windows replaced with Google.com - without option of using 'back' button)
+* upgraded prtsc function will (95% of the time) disallow third-party screencapture usage OTHER than just the keyboard Prtsc function (no idle = no time for third-party tools to be loaded)
+* removed idle redirect in js disable function due to conflict with open graph protocol
+* removed unneeded and conflicting jquery loading function
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
