@@ -21,7 +21,7 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 $all_options = wp_load_alloptions();
 
 foreach ( $all_options as $name => $value ) {
-	if ( stristr( $name, 'wpccp_' ) ) {
+	if ( stristr( $name, 'wpccp' ) ) {
 		delete_option( $name );
 	}
 }

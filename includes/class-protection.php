@@ -179,9 +179,10 @@ class Protection {
 	 * @return boolean
 	 */
 	public static function exclude_pages() {
-		$excluded_pages = ! empty( self::$options['exclude_pages'] ) ? self::$options['exclude_pages'] : [];
 
-		if ( $excluded_pages && get_the_ID() ) {
+		if ( ! empty( self::$options['exclude_pages'] ) && get_the_ID() ) {
+			$excluded_pages = self::$options['exclude_pages']; // Excluded pages.
+
 			// Pages.
 			$page_id          = (string) get_the_ID();
 			$is_excluded_page = in_array( $page_id, $excluded_pages, true ) && is_page( $page_id );
@@ -206,10 +207,12 @@ class Protection {
 	 * @return boolean
 	 */
 	public static function exclude_posts() {
-		$excluded_posts = ! empty( self::$options['exclude_posts'] ) ? self::$options['exclude_posts'] : [];
 
-		if ( $excluded_posts && get_the_ID() ) {
-			$post_id = (string) get_the_ID();
+		if ( ! empty( self::$options['exclude_posts'] ) && get_the_ID() ) {
+			$excluded_posts = self::$options['exclude_posts']; // Excluded posts.
+			$post_id        = (string) get_the_ID(); // Current post.
+
+			// Check if current post is excluded from protection.
 			if ( in_array( $post_id, $excluded_posts, true ) && is_single( $post_id ) ) {
 				return true;
 			}
@@ -226,10 +229,12 @@ class Protection {
 	 * @return boolean
 	 */
 	public static function exclude_categories() {
-		$excluded_categories = ! empty( self::$options['exclude_categories'] ) ? self::$options['exclude_categories'] : [];
-		$post_categories     = wp_get_post_categories( get_the_ID() );
 
-		if ( ! empty( $excluded_categories ) && is_single() && $post_categories ) {
+		if ( ! empty( self::$options['exclude_categories'] ) && is_single() ) {
+			$excluded_categories = self::$options['exclude_categories']; // Excluded categories.
+			$post_categories     = wp_get_post_categories( get_the_ID() ); // Current post categories.
+
+			// Check if current categories excluded from protection.
 			if ( count( array_intersect( $excluded_categories, $post_categories ) ) > 0 ) {
 				return true;
 			}
@@ -246,10 +251,9 @@ class Protection {
 	 * @return boolean
 	 */
 	public static function exclude_admin() {
-		$exclude_admin = ! empty( self::$options['exclude_admin'] ) ? self::$options['exclude_admin'] : '';
-		$user          = wp_get_current_user();
+		$user = wp_get_current_user();
 
-		if ( $exclude_admin && $user && in_array( 'administrator', $user->roles, true ) ) {
+		if ( ! empty( self::$options['exclude_admin'] ) && $user && in_array( 'administrator', $user->roles, true ) ) {
 			return true;
 		}
 		return false;
@@ -264,9 +268,8 @@ class Protection {
 	 * @return boolean
 	 */
 	public static function exclude_registered() {
-		$exclude_registered = ! empty( self::$options['exclude_registered'] ) ? self::$options['exclude_registered'] : '';
 
-		if ( $exclude_registered && is_user_logged_in() ) {
+		if ( ! empty( self::$options['exclude_registered'] ) && is_user_logged_in() ) {
 				return true;
 		}
 		return false;
