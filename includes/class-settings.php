@@ -301,7 +301,7 @@ class Settings {
 		$message = ! empty( self::$options['protection_message'] ) ? self::$options['protection_message'] : '';
 		?>
 		<input id="wpccp_message" class="regular-text" type='text' name='wpccp[protection_message]' value='<?php echo esc_attr( $message ); ?>'>
-		<p>
+		<p class="description">
 			<?php esc_html_e( 'shown on copy or right click action', 'wpccp' ); ?>
 		</p>
 		<?php
@@ -311,11 +311,11 @@ class Settings {
 	 * Render Field: Exclude Pages
 	 */
 	public static function render_pages_field() {
-		$pages = ! empty( self::$options['exclude_pages'] ) ? self::$options['exclude_pages'] : [];
 		?>
 		<select id="wpccp_exclude_pages" data-placeholder="<?php esc_attr_e( 'Select Page(s)', 'wpccp' ); ?>" class="regular-text" multiple name='wpccp[exclude_pages][]'>
 			<?php
-			if ( $pages ) {
+			if ( ! empty( self::$options['exclude_pages'] ) ) {
+				$pages = self::$options['exclude_pages'];
 				foreach ( $pages as $page ) {
 					$title = get_the_title( $page );
 					$title = ( mb_strlen( $title ) > 50 ) ? mb_substr( $title, 0, 49 ) . '...' : $title;
@@ -326,6 +326,9 @@ class Settings {
 			}
 			?>
 		</select>
+		<p class="description">
+			<?php esc_html_e( 'disable protection on selected pages', 'wpccp' ); ?>
+		</p>
 		<?php
 	}
 
@@ -333,11 +336,12 @@ class Settings {
 	 * Render Field: Exclude Posts
 	 */
 	public static function render_posts_field() {
-		$posts = ! empty( self::$options['exclude_posts'] ) ? self::$options['exclude_posts'] : [];
 		?>
 		<select id="wpccp_exclude_posts" data-placeholder="<?php esc_attr_e( 'Select Post(s)', 'wpccp' ); ?>" class="regular-text" multiple name='wpccp[exclude_posts][]'>
 			<?php
-			if ( $posts ) {
+			if ( ! empty( self::$options['exclude_posts'] ) ) {
+				$posts = self::$options['exclude_posts'];
+
 				foreach ( $posts as $post ) {
 					$title = get_the_title( $post );
 					$title = ( mb_strlen( $title ) > 50 ) ? mb_substr( $title, 0, 49 ) . '...' : $title;
@@ -348,6 +352,9 @@ class Settings {
 			}
 			?>
 		</select>
+		<p class="description">
+			<?php esc_html_e( 'disable protection on selected posts', 'wpccp' ); ?>
+		</p>
 		<?php
 	}
 
@@ -378,6 +385,9 @@ class Settings {
 				<option value="<?php echo esc_attr( $posttype ); ?>" <?php selected( true, in_array( $posttype, $post_types, true ) ); ?>><?php echo esc_html( $posttype ); ?></option>
 			<?php } ?>
 		</select>
+		<p class="description">
+			<?php esc_html_e( 'disable protection on selected custom posttypes', 'wpccp' ); ?>
+		</p>
 		<?php
 	}
 
@@ -393,6 +403,9 @@ class Settings {
 				<option value="<?php echo esc_attr( $category->term_id ); ?>" <?php selected( true, in_array( (string) $category->term_id, $categories, true ) ); ?>><?php echo esc_html( $category->name ); ?></option>
 			<?php } ?>
 		</select>
+		<p class="description">
+			<?php esc_html_e( 'disable protection on selected categories', 'wpccp' ); ?>
+		</p>
 		<?php
 	}
 
@@ -409,6 +422,9 @@ class Settings {
 				<option value="<?php echo esc_attr( $role ); ?>" <?php selected( true, in_array( $role, $roles, true ) ); ?>><?php echo esc_html( $role_info['name'] ); ?></option>
 			<?php } ?>
 		</select>
+		<p class="description">
+			<?php esc_html_e( 'disable protection for selected roles', 'wpccp' ); ?>
+		</p>
 		<?php
 	}
 
@@ -419,6 +435,9 @@ class Settings {
 		$registered = ! empty( self::$options['exclude_registered'] ) ? self::$options['exclude_registered'] : '';
 		?>
 		<input id="wpccp_exclude_registered" type='checkbox' name='wpccp[exclude_registered]' <?php checked( $registered, 'on' ); ?>>
+		<p class="description">
+			<?php esc_html_e( 'disable protection for registered users', 'wpccp' ); ?>
+		</p>
 		<?php
 	}
 
@@ -429,6 +448,9 @@ class Settings {
 		$admin = ! empty( self::$options['exclude_admin'] ) ? self::$options['exclude_admin'] : '';
 		?>
 		<input id="wpccp_exclude_admin" type='checkbox' name='wpccp[exclude_admin]' <?php checked( $admin, 'on' ); ?>>
+		<p class="description">
+			<?php esc_html_e( 'disable protection for users with admin role', 'wpccp' ); ?>
+		</p>
 		<?php
 	}
 
@@ -439,6 +461,9 @@ class Settings {
 		$paste = ! empty( self::$options['exclude_paste'] ) ? self::$options['exclude_paste'] : '';
 		?>
 		<input id="wpccp_exclude_paste" type='checkbox' name='wpccp[exclude_paste]' <?php checked( $paste, 'on' ); ?>>
+		<p class="description">
+			<?php esc_html_e( 'allow copy (ctrl + c)', 'wpccp' ); ?>
+		</p>
 		<?php
 	}
 
@@ -449,6 +474,9 @@ class Settings {
 		$print_screen = ! empty( self::$options['exclude_print_screen'] ) ? self::$options['exclude_print_screen'] : '';
 		?>
 		<input disabled id="wpccp_exclude_print_screen" type='checkbox' name='wpccp[exclude_print_screen]' <?php checked( $print_screen, 'on' ); ?>>
+		<p class="description">
+			<?php esc_html_e( 'allow print screen', 'wpccp' ); ?>
+		</p>
 		<?php
 	}
 
@@ -459,6 +487,9 @@ class Settings {
 		$links = ! empty( self::$options['exclude_links'] ) ? self::$options['exclude_links'] : '';
 		?>
 		<input disabled id="wpccp_exclude_links" type='checkbox' name='wpccp[exclude_links]' <?php checked( $links, 'on' ); ?>>
+		<p class="description">
+			<?php esc_html_e( 'allow content menu on links', 'wpccp' ); ?>
+		</p>
 		<?php
 	}
 
@@ -469,6 +500,9 @@ class Settings {
 		$feed = ! empty( self::$options['protect_feed'] ) ? self::$options['protect_feed'] : '';
 		?>
 		<input disabled id="wpccp_protect_feed" type='checkbox' name='wpccp[protect_feed]' <?php checked( $feed, 'on' ); ?>>
+		<p class="description">
+			<?php esc_html_e( 'disable protection on feeds', 'wpccp' ); ?>
+		</p>
 		<?php
 	}
 

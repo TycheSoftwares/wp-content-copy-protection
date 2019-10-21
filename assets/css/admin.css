@@ -2,6 +2,16 @@
 	padding: 7px;
 }
 
+#form_wpccp input[type="checkbox"]{
+	float: left;
+	margin-top: 3px;
+}
+
+#form_wpccp input[type="checkbox"] + p{
+	float: left;
+	margin-top: 0;
+}
+
 #wpccp_license_activate,
 #wpccp_license_deactivate {
 	height: 33px;
@@ -36,8 +46,8 @@
 	align-items: center;
 	position: absolute;
 	z-index: 100;
-	margin-top: 5%;
-	margin-left: 12%;
+	margin-top: 7%;
+	right: 10%;
 	background-color: #ffffff;
 	border-radius: 4px;
 	padding: 15px 20px;
