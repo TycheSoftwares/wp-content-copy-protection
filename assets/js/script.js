@@ -111,26 +111,3 @@ function wpccpDisablePrintScreen( e ) {
 		window.location.replace( 'http://google.com/' );
 	}
 }
-
-/**
- * Disable selection on mobile
- */
-jQuery( function( $ ) {
-/* eslint-disable */
-let t = wpccpUrl + 'assets/img/transparent.gif',
-e = ! 0,
-o = new Image; o.src = t, $( 'img' ).on( 'mouseenter touchstart', function() {
-let o = $( this ); if ( ! o.hasClass( 'Overlay' ) && ( e || o.hasClass( 'protectMe' ) ) ) {
-var i = o.offset(),
-n = $( '<img class="Overlay" src="' + t + '" width="' + o.width() + '" height="' + o.height() + '" />' ).css( { position: 'absolute', zIndex: 9999999, left: i.left, top: i.top } ).appendTo( 'body' ).bind( 'mouseleave', function() {
-setTimeout( function() {
-n.remove();
-}, 0, $( this ) );
-} ); 'ontouchstart' in window && $( document ).one( 'touchend', function() {
-setTimeout( function() {
-n.remove();
-}, 0, n );
-} )
-;}
-} )
-;} );
