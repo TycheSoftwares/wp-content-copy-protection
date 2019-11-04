@@ -162,6 +162,10 @@ This plugin inheritently disables right click/copy/save functions on your defaul
 
 == Changelog ==
 
+= 2.0.1 (04 Nov 2019) =
+
+* Fixed an issue where links were getting freezed when an image is wrapped around anchor(<a>) tags.
+
 = 2.0.0 (24 Oct 2019) =
 
 * Complete code refactored and WPCS standards applied
