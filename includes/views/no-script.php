@@ -19,7 +19,7 @@
 		<div style="position:fixed; top:0px; left:0px; z-index:3000; height:100%; width:100%; background-color:#FFFFFF">
 			<br/><br/>
 			<div style="font-family: Tahoma; font-size: 14px; background-color:#FFFFCC; border: 1pt solid Black; padding: 10pt;">
-				Sorry, you have Javascript Disabled! To see this page as it is meant to appear, please enable your Javascript! See instructions <a href="http://www.enable-javascript.com/">here</a>
+				Sorry, you have Javascript Disabled! To see this page as it is meant to appear, please enable your Javascript!
 			</div>
 		</div>
 	</noscript>
