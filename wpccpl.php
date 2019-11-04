@@ -5,7 +5,7 @@
  * Description: WP Content Copy Protection prevents plagiarism and protects your valuable online content (such as source code, text and images) from being copied illegally. Copy methods are disabled via mouse and keyboard.
  * Author: Tyche Softwares
  * Author URI: https://www.tychesoftwares.com/
- * Version: 2.0.0
+ * Version: 2.0.1
  * Text Domain: wpccp
  * Domain Path: /languages
  * Tags: content, protection,
@@ -27,7 +27,7 @@ if ( ! defined( 'WPINC' ) ) {
  */
 // Plugin version.
 if ( ! defined( 'WPCCP_VERSION' ) ) {
-	define( 'WPCCP_VERSION', '2.0.0' );
+	define( 'WPCCP_VERSION', '2.0.1' );
 }
 // Plugin Root File.
 if ( ! defined( 'WPCCP_PLUGIN_FILE' ) ) {

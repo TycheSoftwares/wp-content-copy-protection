@@ -462,7 +462,7 @@ class Settings {
 		?>
 		<input id="wpccp_exclude_paste" type='checkbox' name='wpccp[exclude_paste]' <?php checked( $paste, 'on' ); ?>>
 		<p class="description">
-			<?php esc_html_e( 'allow copy (ctrl + c)', 'wpccp' ); ?>
+			<?php esc_html_e( 'allow data to be pasted using shortcuts (helpful for pasting copied data into input fields)', 'wpccp' ); ?>
 		</p>
 		<?php
 	}
