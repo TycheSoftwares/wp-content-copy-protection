@@ -41,7 +41,7 @@ class Protection {
 		add_action( 'wp_enqueue_scripts', [ __CLASS__, 'register_assets' ] );
 		register_activation_hook( WPCCP_PLUGIN_FILE, [ __CLASS__, 'on_activation' ] );
 		add_action( 'wp', [ __CLASS__, 'add_source_padding' ] );
-		add_action( 'wp_head', [ __CLASS__, 'render_noscript' ] );
+		add_action( 'wp_head', [ __CLASS__, 'render_noscript' ], 9999 );
 
 		// Set data.
 		self::$options = get_option( 'wpccp' );
