@@ -4,7 +4,7 @@ Contributors:      tychesoftwares, dhruvin
 Donate link:       https://www.paypal.me/TycheSoftwares
 Tags:              protection, copyright, theft, no right click, content protection, image protection, image protect, copyprotect, security, copy protection, protect blog, plagiarism, duplicate, seo, context menu
 Requires at least: 3.0
-Tested up to:      5.3
+Tested up to:      5.4
 Stable tag:        trunk
 License:           GPLv2 or Later
 License URI: 	   http://www.gnu.org/licenses/gpl-2.0.html
@@ -167,6 +167,11 @@ The pro version includes super aggressive image protection (making it near impos
 This plugin inheritently disables right click/copy/save functions on your default HTML5 video and audio embeds.
 
 == Changelog ==
+
+= 2.0.2 (03 May 2020) =
+
+* Fixed an issue where the favicons were not getting displayed on the site.
+* Compatibility with WordPress 5.4
 
 = 2.0.1 (04 Nov 2019) =
 
