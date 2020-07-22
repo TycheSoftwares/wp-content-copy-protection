@@ -46,7 +46,11 @@ if ( ! defined( 'WPCCP_PLUGIN_BASENAME' ) ) {
 	define( 'WPCCP_PLUGIN_BASENAME', plugin_basename( WPCCP_PLUGIN_FILE ) );
 }
 // Autoloader.
-require_once 'vendor/autoload.php';
+if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
+	require __DIR__ . '/vendor/autoload.php';
+} else {
+	require 'vendor/autoload.php';
+}
 
 // Bootstrap WPCCP.
 use TycheSoftwares\Wpccp\Wpccp;
