@@ -189,7 +189,7 @@ class Protection {
 
 			// WooCommerce Pages - Needs extra checks.
 			$woocommerce_shop_page = get_option( 'woocommerce_shop_page_id' );
-			$is_excluded_shop_page = is_shop() && in_array( $woocommerce_shop_page, $excluded_pages, true );
+			$is_excluded_shop_page = function_exists( 'is_shop' ) && is_shop() && in_array( $woocommerce_shop_page, $excluded_pages, true );
 
 			if ( $is_excluded_page || $is_excluded_shop_page ) {
 				return true;
