@@ -525,6 +525,7 @@ class Settings {
 			'ignore_sticky_posts' => 1,
 			'posts_per_page'      => 10,
 			'post_type'           => $search_type,
+			'suppress_filters'    => true,
 		];
 
 		$search_results = new \WP_Query( $search_args );
