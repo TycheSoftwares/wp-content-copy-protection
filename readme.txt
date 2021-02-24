@@ -168,6 +168,10 @@ This plugin inheritently disables right click/copy/save functions on your defaul
 
 == Changelog ==
 
+= 2.0.4 (24 February 2021) =
+
+* Removed the promotional notice being displayed when the folders are accessed directly.
+
 = 2.0.3 (22 December 2020) =
 
 * Fixed an issue where Fatal error was thrown when WooCommerce was not activate
