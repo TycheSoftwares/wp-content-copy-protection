@@ -4,7 +4,7 @@ Contributors:      tychesoftwares, dhruvin
 Donate link:       https://www.paypal.me/TycheSoftwares
 Tags:              protection, copyright, theft, no right click, content protection, image protection, image protect, copyprotect, security, copy protection, protect blog, plagiarism, duplicate, seo, context menu
 Requires at least: 3.0
-Tested up to:      5.7
+Tested up to:      5.8
 Stable tag:        trunk
 License:           GPLv2 or Later
 License URI: 	   http://www.gnu.org/licenses/gpl-2.0.html
