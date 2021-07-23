@@ -40,7 +40,6 @@ class Protection {
 		// Hooks.
 		add_action( 'wp_enqueue_scripts', [ __CLASS__, 'register_assets' ] );
 		register_activation_hook( WPCCP_PLUGIN_FILE, [ __CLASS__, 'on_activation' ] );
-		add_action( 'wp', [ __CLASS__, 'add_source_padding' ] );
 		add_action( 'wp_head', [ __CLASS__, 'render_noscript' ], 9999 );
 
 		// Set data.
@@ -151,22 +150,6 @@ class Protection {
 				}
 			}
 			closedir( $sub_folders );
-		}
-	}
-
-	/**
-	 * Add padding to html source
-	 *
-	 * @since 2.0.0
-	 * @access public
-	 *
-	 * @return void
-	 */
-	public static function add_source_padding() {
-		ob_start();
-		$break = "\n";
-		for ( $i = 0; $i <= 499; $i++ ) {
-			echo esc_html( $break );
 		}
 	}
 
