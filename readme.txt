@@ -168,7 +168,7 @@ This plugin inheritently disables right click/copy/save functions on your defaul
 
 == Changelog ==
 
-= 2.0.5 (24 July 2021) =
+= 2.0.5 (26 July 2021) =
 
 * Fix - 500 empty lines were getting added to the source code. This is fixed now.
 
