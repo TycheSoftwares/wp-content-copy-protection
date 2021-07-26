@@ -168,6 +168,10 @@ This plugin inheritently disables right click/copy/save functions on your defaul
 
 == Changelog ==
 
+= 2.0.5 (26 July 2021) =
+
+* Fix - 500 empty lines were getting added to the source code. This is fixed now.
+
 = 2.0.4 (24 February 2021) =
 
 * Removed the promotional notice being displayed when the folders are accessed directly.
