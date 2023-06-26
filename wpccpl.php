@@ -10,7 +10,7 @@
  * Domain Path: /languages
  * Tags: content, protection,
  * Requires at least: 3.0.1
- * Tested up to:  7.8
+ * Tested up to:  6.2
  * Stable tag: 2.0.6
  * License: GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html/
