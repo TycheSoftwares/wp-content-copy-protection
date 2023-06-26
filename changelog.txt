@@ -1,5 +1,8 @@
 ﻿== Changelog ==
 
+= 2.0.6 (26 June 2023) =
+* Compatibility - Tested with latest WordPress v6.2.
+
 = 1.0.7 (PRO Release)=
 * included wpccp admin settings page (live)
 * extended function one (admin can now exclude pages from being copy protected)
